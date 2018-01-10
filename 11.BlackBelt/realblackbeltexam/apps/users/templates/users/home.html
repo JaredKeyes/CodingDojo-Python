@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Home</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static '/users/styles.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+
+            <div class="header">
+                <h1 class='greeting'>Hello {{ user.name }}</h1>
+                <a href="{% url 'logout' %}" class='logout'>Logout</a>
+            </div>
+            <hr>
+
+            <div class="your_trips">
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+                <h4>Your Trip Schedules</h4>
+                <table>
+        			<tr>
+        				<th class='table'>Destination</th>
+        				<th class='table'>Travel Start Date</th>
+        				<th class='table'>Travel End Date</th>
+        				<th class='table'>Description</th>
+        			</tr>
+                    {% for trip in trips %}
+                    <tr>
+                        <td><a href="{% url 'trip_detail' trip.id%}">{{trip.destination}}</a></td>
+                        <td>{{trip.start_date}}</td>
+                        <td>{{trip.end_date}}</td>
+                        <td>{{trip.plan}}</td>
+                    </tr>
+                    {% endfor %}
+                    <hr>
+                    {% for attend in attending %}
+                    <tr>
+                        <td><a href="{% url 'trip_detail' attend.trip.id%}">{{attend.trip.destination}}</a></td>
+                        <td>{{attend.trip.start_date}}</td>
+                        <td>{{attend.trip.end_date}}</td>
+                        <td>{{attend.trip.plan}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <hr>
+                {% if othersTrips %}
+                <h4>Other User's Travel Plans</h4>
+                <table>
+                    <tr>
+                        <th class='table'>Name</th>
+                        <th class='table'>Destination</th>
+                        <th class='table'>Travel Start Date</th>
+                        <th class='table'>Travel End Date</th>
+                        <th class='table'>Do you want to join?</th>
+                    </tr>
+                    {% for othersTrip in othersTrips %}
+                    <tr>
+                        <td>{{othersTrip.user.name}}</td>
+                        <td><a href="{% url 'trip_detail' othersTrip.id %}">{{othersTrip.destination}}</a></td>
+                        <td>{{othersTrip.start_date}}</td>
+                        <td>{{othersTrip.end_date}}</td>
+                        <td><a href="{% url 'join' othersTrip.id %}">Join</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+
+                <a href="{% url 'add'%}">Add Travel Plan</a>
+            </div>
+
+        </div>
+    </body>
+</html>

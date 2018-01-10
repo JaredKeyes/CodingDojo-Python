@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mystylesheet.css') }}">
+  </head>
+  <body>
+    <form action="/results" method="post">
+      <p>Name:</p> <input type="text" name="name">
+      <br>
+      <p>Location:</p> <input type="text" name="location">
+      <br>
+      <p>Favorite Language:</p> <input type="text" name="language">
+      <br>
+      <p>Comments:</p> <input type="text" name="comment">
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+
+  </body>
+</html>

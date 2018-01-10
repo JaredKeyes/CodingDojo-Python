@@ -1,0 +1,16 @@
+name = ["Anna", "Eli", "Pariece", "Brendan", "Amy", "Shane", "Oscar"]
+favorite_animal = ["horse", "cat", "spider", "giraffe", "ticks", "dolphins", "llamas","Billybob"]
+
+def make_dict(arr1, arr2):
+    # temp = ""  
+    new_dict = {}
+    if(arr2>arr1):
+      temp = arr1
+      arr1 = arr2
+      arr2 = temp
+    new_list = zip(arr1,arr2)
+    new_dict = dict(new_list)
+    return new_dict
+
+print make_dict(name,favorite_animal)
+
