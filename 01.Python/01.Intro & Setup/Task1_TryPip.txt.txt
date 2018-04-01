@@ -1,0 +1,30 @@
+Assignment: Practice your pip
+This short assignment will help you understand pip and get accustomed to using the commands required to use pip modules.
+
+You will need to use your terminal to run these commands. Open up terminal, command prompt, or git bash to continue. Run them in the order instructed. Your assignment submission should be a .txt file that includes a short explanation of what you were able to learn about each command by doing a brief (1-2 min) web search for each term. If it is relevant, include the output of your command and your understanding of what it means. It is important to always read your terminal output and try to understand it.
+
+Run the following commands:
+
+pip install Django==1.11.9
+pip list
+pip install Django==1.11.9 (We know you already ran this one. What information do you see returned in terminal after this command?)
+pip freeze (What's the difference between freeze and list?)
+First cd into your Desktop directory (cd ~/Desktop), then run this command: pip freeze > requirements.txt. What do you see when you ls? What's inside this file?
+pip uninstall Django
+pip show Django
+pip search Flask. This one might take a moment to execute.
+
+
+===============================================================================================================================================================================
+
+
+
+The pip install command installs the program listed afterwards.
+
+The pip list command lists installed packages, including editables.
+
+Pip list outputs the installed packages and pip freeze outputs installed packages in requirement format.
+
+When running pip freeze on the requirements.txt and running ls it displays a git repository.
+
+Pip search searchs for PyPI packages whose name or summary contains <query>.

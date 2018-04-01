@@ -1,9 +1,0 @@
-The pip install command installs the program listed afterwards.
-
-The pip list command lists installed packages, including editables.
-
-Pip list outputs the installed packages and pip freeze outputs installed packages in requirement format.
-
-When running pip freeze on the requirements.txt and running ls it displays a git repository.
-
-Pip search searchs for PyPI packages whose name or summary contains <query>.
