@@ -35,17 +35,17 @@ spL = ['name','address','phone number','social security number']
 y = eL
 if(isinstance(y,int)):
     if(y>=100):
-        print "That's a big number!"
+        print("That's a big number!")
     else:
-        print "That's a small number"
+        print("That's a small number")
 elif(isinstance(y,str)):
     if(len(y)>=50):
-        print "Long sentence"
+        print("Long sentence")
     else:
-        print "Short sentence"
+        print("Short sentence")
 else:
     if(len(y)>=10):
-        print "Big list!"
+        print("Big list!")
     else:
-        print "Short list"
+        print("Short list")
 
